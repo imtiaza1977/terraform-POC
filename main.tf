@@ -20,7 +20,7 @@ terraform {
   }
 }
 
-# 2. Configure the AzureRM Provider
+# Configure the AzureRM Provider
 provider "azurerm" {
   features {}
 }
@@ -48,7 +48,7 @@ resource "azurerm_subnet" "mysubnet" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-# Create our Azure Storage Account - awspresto
+# 4. Create our Azure Storage Account - awspresto
 resource "azurerm_storage_account" "awspresto" {
   name                     = "awspresto"
   resource_group_name      = azurerm_resource_group.myrg.name
@@ -59,7 +59,7 @@ resource "azurerm_storage_account" "awspresto" {
     environment = "awspresentation"
   }
 }
-# Create our vNIC for our VM and assign it to our Virtual Machines Subnet
+# 5. Create our vNIC for our VM and assign it to our Virtual Machines Subnet
 resource "azurerm_network_interface" "vmnic" {
   name                = "awsprevm01nic"
   location            = azurerm_resource_group.myrg.location
@@ -71,7 +71,7 @@ resource "azurerm_network_interface" "vmnic" {
     private_ip_address_allocation = "Dynamic"
   }
 }
-# Create our Virtual Machine - AwsPre-VM01
+# 6. Create our Virtual Machine - AwsPre-VM01
 resource "azurerm_virtual_machine" "aws-pre-vm01" {
   name                  = "aws-pre-vm01"
   location              = azurerm_resource_group.myrg.location
