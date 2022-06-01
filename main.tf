@@ -1,8 +1,17 @@
 # 1. Specify the version of the AzureRM Provider to use
-#mpJKwRHlFdOJsjBcRyalC4ro+ybTBBx9zL0ZhFlbhjCrrjJAd0Y4bW7+tEKvUPb1YUHvQ3vTBiAV+AStHCL88A==
+#
 
 
 terraform {
+
+  # backend "azurerm" {
+  #   resource_group_name  = "awspre-infra"
+  #   storage_account_name = "awspresto"
+  #   container_name       = "awsprestate"
+  #   key                  = "mpJKwRHlFdOJsjBcRyalC4ro+ybTBBx9zL0ZhFlbhjCrrjJAd0Y4bW7+tEKvUPb1YUHvQ3vTBiAV+AStHCL88A=="
+  # }
+
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
