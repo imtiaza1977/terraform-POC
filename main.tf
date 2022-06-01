@@ -49,8 +49,8 @@ resource "azurerm_subnet" "mysubnet" {
 }
 
 # 4. Create our Azure Storage Account - awspresto
-resource "azurerm_storage_account" "awspresto" {
-  name                     = "awspresto"
+resource "azurerm_storage_account" "awsprestoloc" {
+  name                     = "awsprestoloc"
   resource_group_name      = azurerm_resource_group.myrg.name
   location                 = azurerm_resource_group.myrg.location
   account_tier             = "Standard"
