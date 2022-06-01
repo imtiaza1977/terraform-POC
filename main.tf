@@ -51,8 +51,8 @@ resource "azurerm_subnet" "mysubnet" {
 # Create our Azure Storage Account - awspresto
 resource "azurerm_storage_account" "awspresto" {
   name                     = "awspresto"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
+  resource_group_name      = azurerm_resource_group.myrg.name
+  location                 = azurerm_resource_group.myrg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
   tags = {
@@ -62,20 +62,20 @@ resource "azurerm_storage_account" "awspresto" {
 # Create our vNIC for our VM and assign it to our Virtual Machines Subnet
 resource "azurerm_network_interface" "vmnic" {
   name                = "awsprevm01nic"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.myrg.location
+  resource_group_name = azurerm_resource_group.myrg.name
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.sn.id
+    subnet_id                     = azurerm_subnet.mysubnet.id
     private_ip_address_allocation = "Dynamic"
   }
 }
 # Create our Virtual Machine - AwsPre-VM01
 resource "azurerm_virtual_machine" "aws-pre-vm01" {
   name                  = "aws-pre-vm01"
-  location              = azurerm_resource_group.rg.location
-  resource_group_name   = azurerm_resource_group.rg.name
+  location              = azurerm_resource_group.myrg.location
+  resource_group_name   = azurerm_resource_group.myrg.name
   network_interface_ids = [azurerm_network_interface.vmnic.id]
   vm_size               = "Standard_B1s"
 
