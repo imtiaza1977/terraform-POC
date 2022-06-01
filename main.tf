@@ -1,4 +1,7 @@
 # 1. Specify the version of the AzureRM Provider to use
+#mpJKwRHlFdOJsjBcRyalC4ro+ybTBBx9zL0ZhFlbhjCrrjJAd0Y4bW7+tEKvUPb1YUHvQ3vTBiAV+AStHCL88A==
+
+
 terraform {
   required_providers {
     azurerm = {

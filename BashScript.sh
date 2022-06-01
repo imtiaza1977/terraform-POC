@@ -3,7 +3,7 @@ az login
 az account set --subscription "Terraform-Deployment" 
 
 RESOURCE_GROUP_NAME="awspre-infra"
-STORAGE_ACCOUNT_NAME="awspresto-infra"
+STORAGE_ACCOUNT_NAME="awspresto"
 CONTAINER_NAME="awsprestate"
 STATE_FILE="terraform.state"
 
