@@ -4,12 +4,12 @@
 
 terraform {
 
-  # backend "azurerm" {
-  #   resource_group_name  = "awspre-infra"
-  #   storage_account_name = "awspresto"
-  #   container_name       = "awsprestate"
-  #   key                  = "mpJKwRHlFdOJsjBcRyalC4ro+ybTBBx9zL0ZhFlbhjCrrjJAd0Y4bW7+tEKvUPb1YUHvQ3vTBiAV+AStHCL88A=="
-  # }
+  backend "azurerm" {
+    resource_group_name  = "awspre-infra"
+    storage_account_name = "awspresto"
+    container_name       = "awsprestate"
+    key                  = "terraform.state"
+  }
 
 
   required_providers {
