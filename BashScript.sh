@@ -12,7 +12,7 @@ STATE_FILE="terraform.state"
 az group create --name $RESOURCE_GROUP_NAME --location koreacentral
 
 
-# Create storage account
+# Create storage account.
 az storage account create --resource-group $RESOURCE_GROUP_NAME --name $STORAGE_ACCOUNT_NAME --sku Standard_LRS --encryption-services blob
 
 
